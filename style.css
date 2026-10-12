@@ -1,19 +1,27 @@
 :root {
-  --bg: #f7f7f5;
+  --bg: #fdf6f9;
   --surface: #ffffff;
-  --text: #1f2328;
-  --muted: #5c636b;
-  --accent: #3b6ef5;
-  --border: #e3e5e8;
+  --text: #3d3a4b;
+  --muted: #6e6a80;
+  --accent: #e89ab8;
+  --border: #f0e2ea;
+  --hero-bg: linear-gradient(135deg, #fde2ec 0%, #e6e0fa 50%, #d9f0ee 100%);
+  --card-1: #fde8ef;
+  --card-2: #fff3dc;
+  --card-3: #e0f3ec;
 }
 
 :root[data-theme="dark"] {
-  --bg: #15171a;
-  --surface: #1e2125;
-  --text: #e8eaed;
-  --muted: #a0a7b0;
-  --accent: #7c9bff;
-  --border: #2e3237;
+  --bg: #24212d;
+  --surface: #2e2a38;
+  --text: #f1edf7;
+  --muted: #bdb6cc;
+  --accent: #f4b6cf;
+  --border: #3d384a;
+  --hero-bg: linear-gradient(135deg, #3f2f3d 0%, #332f4a 50%, #2a3c3d 100%);
+  --card-1: #3e2f3b;
+  --card-2: #3d3a2e;
+  --card-3: #2d3c37;
 }
 
 * {
@@ -35,6 +43,7 @@ body {
   position: relative;
   padding: 96px 16px 72px;
   text-align: center;
+  background: var(--hero-bg);
   border-bottom: 1px solid var(--border);
 }
 
@@ -92,8 +101,8 @@ main {
 /* 좋아하는 것 카드 */
 .cards {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 }
 
@@ -104,6 +113,10 @@ main {
   border-radius: 12px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
+.card:nth-child(1) { background: var(--card-1); }
+.card:nth-child(2) { background: var(--card-2); }
+.card:nth-child(3) { background: var(--card-3); }
 
 .card:hover {
   transform: translateY(-4px);
