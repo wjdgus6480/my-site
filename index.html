@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홍길동 | 자기소개</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    <h1 class="hero-name">홍길동</h1>
+    <p class="hero-tagline">새로운 것을 배우고 만드는 걸 좋아하는 개발자 지망생입니다.</p>
+  </header>
+
+  <main>
+    <section class="section reveal" id="about">
+      <h2>소개</h2>
+      <p>
+        안녕하세요, 홍길동입니다. 작은 아이디어를 직접 손으로 만들어 보는 과정을 즐깁니다.
+        요즘은 HTML, CSS, JavaScript로 웹의 기본기를 다지고 있어요.
+        꾸준히 기록하고, 어제보다 조금 더 나은 결과물을 만드는 것이 목표입니다.
+      </p>
+    </section>
+
+    <section class="section reveal" id="favorites">
+      <h2>좋아하는 것 3가지</h2>
+      <ul class="cards">
+        <li class="card">
+          <span class="card-icon" aria-hidden="true">📚</span>
+          <h3>독서</h3>
+          <p>소설부터 기술 서적까지, 새로운 관점을 얻는 시간이 좋아요.</p>
+        </li>
+        <li class="card">
+          <span class="card-icon" aria-hidden="true">☕</span>
+          <h3>커피</h3>
+          <p>아침에 내려 마시는 핸드드립 한 잔으로 하루를 시작합니다.</p>
+        </li>
+        <li class="card">
+          <span class="card-icon" aria-hidden="true">🚶</span>
+          <h3>산책</h3>
+          <p>생각이 막힐 때는 동네를 한 바퀴 걸으며 머리를 식혀요.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> 홍길동. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
