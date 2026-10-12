@@ -1,24 +1,24 @@
 :root {
-  --bg: #fdf6f9;
+  --bg: #e9e9ec;
   --surface: #ffffff;
   --text: #3d3a4b;
   --muted: #6e6a80;
   --accent: #e89ab8;
   --border: #f0e2ea;
-  --hero-bg: linear-gradient(135deg, #fde2ec 0%, #e6e0fa 50%, #d9f0ee 100%);
+  --hero-bg: linear-gradient(135deg, #f5f5f7 0%, #dcdce0 50%, #c8c8ce 100%);
   --card-1: #fde8ef;
   --card-2: #fff3dc;
   --card-3: #e0f3ec;
 }
 
 :root[data-theme="dark"] {
-  --bg: #24212d;
+  --bg: #2a2a2d;
   --surface: #2e2a38;
   --text: #f1edf7;
   --muted: #bdb6cc;
   --accent: #f4b6cf;
   --border: #3d384a;
-  --hero-bg: linear-gradient(135deg, #3f2f3d 0%, #332f4a 50%, #2a3c3d 100%);
+  --hero-bg: linear-gradient(135deg, #3a3a3e 0%, #303034 50%, #252528 100%);
   --card-1: #3e2f3b;
   --card-2: #3d3a2e;
   --card-3: #2d3c37;
@@ -57,6 +57,36 @@ body {
   margin-top: 12px;
   font-size: 1.1rem;
   color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.nav a {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.nav a:hover {
+  background: var(--accent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.footer a {
+  color: var(--accent);
 }
 
 .theme-toggle {
