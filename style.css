@@ -12,6 +12,7 @@
 }
 
 :root[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #2a2a2d;
   --surface: #2e2a38;
   --text: #f1edf7;
