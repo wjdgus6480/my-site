@@ -9,8 +9,11 @@ const toggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
 
 function applyTheme(theme) {
+  const isDark = theme === "dark";
   root.dataset.theme = theme;
-  toggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  toggle.textContent = isDark ? "☀️" : "🌙";
+  toggle.setAttribute("aria-label", isDark ? "라이트 모드로 전환" : "다크 모드로 전환");
+  toggle.setAttribute("aria-pressed", String(isDark));
 }
 
 let savedTheme = null;
@@ -18,12 +21,18 @@ try {
   savedTheme = localStorage.getItem("theme");
 } catch (e) {}
 
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+applyTheme(savedTheme || (darkQuery.matches ? "dark" : "light"));
+
+// 직접 고른 적이 없으면 OS 테마 변경을 따라감
+darkQuery.addEventListener("change", (e) => {
+  if (!savedTheme) applyTheme(e.matches ? "dark" : "light");
+});
 
 toggle.addEventListener("click", () => {
   const next = root.dataset.theme === "dark" ? "light" : "dark";
   applyTheme(next);
+  savedTheme = next;
   try {
     localStorage.setItem("theme", next);
   } catch (e) {}

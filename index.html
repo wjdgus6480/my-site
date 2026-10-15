@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>홍길동 | 자기소개</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // 화면이 그려지기 전에 테마를 적용해 새로고침 시 깜빡임 방지
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("theme") ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    } catch (e) {}
+  </script>
 </head>
 <body>
   <header class="hero">
